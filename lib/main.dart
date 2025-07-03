@@ -1,10 +1,8 @@
-// lib/main.dart
-
 import 'package:flutter/material.dart';
-import 'package:budget_mate_app/screens/dashboard_screen.dart'; // Import halaman dashboard baru kita
+import 'screens/dashboard_screen.dart'; // atau import lainnya sesuai struktur kamu
 
 void main() {
-  runApp(const MyApp()); // Jalankan aplikasi Flutter
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,33 +11,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BudgetMate', // Judul aplikasi
+      title: 'BudgetMate',
       theme: ThemeData(
-        primarySwatch: Colors.green, // Menggunakan warna hijau sebagai warna utama tema
-        primaryColor: Colors.green.shade700, // Warna primer yang lebih spesifik
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.green.shade700, // Warna latar belakang AppBar
-          foregroundColor: Colors.white, // Warna teks dan ikon di AppBar
-          titleTextStyle: const TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
+        primaryColor: const Color(0xFFC4E860), // Warna hijau lemon
+        scaffoldBackgroundColor: const Color(0xFFFDFDFD), // warna latar belakang keseluruhan
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xFFC4E860),
+          foregroundColor: Colors.white,
         ),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Colors.green.shade600, // Warna latar belakang Floating Action Button
-          foregroundColor: Colors.white, // Warna ikon/teks di FAB
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFFC4E860), // Warna AppBar
+          foregroundColor: Colors.black, // Warna teks/icon
         ),
-        cardTheme: CardThemeData( // Menggunakan CardThemeData untuk tema kartu
-          elevation: 4,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.0), // Sudut membulat untuk semua Card
-          ),
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: const Color(0xFFC4E860),
+          secondary: Colors.deepOrangeAccent,
         ),
-        useMaterial3: true, // Mengaktifkan Material Design 3
       ),
-      home: const DashboardScreen(), // Halaman awal yang akan ditampilkan adalah DashboardScreen
-      debugShowCheckedModeBanner: false, // Sembunyikan banner "DEBUG"
+      home: const DashboardScreen(),
     );
   }
 }
